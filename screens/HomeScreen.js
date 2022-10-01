@@ -1,13 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 
-export default function HomeScreen() {
+import { Button, StyleSheet, Text, View } from "react-native";
+
+export default function HomeScreen(props) {
   return (
- 
-      <View style={styles.container}>
-        <Text>Home Screen</Text>
-      </View>
-    
+    <View style={styles.container}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Click Me"
+        onPress={() => {
+          props.navigation.navigate("screen2");
+        }}
+      />
+    </View>
   );
 }
 
