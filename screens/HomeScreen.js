@@ -14,7 +14,7 @@ export default function HomeScreen(props) {
         <TouchableOpacity
           style={styles.languageOption}
           onPress={() => {
-            console.log("pressed");
+            props.navigation.navigate("languageSelect");
           }}
         >
           <Text style={styles.languageOptionText}>English</Text>
@@ -70,6 +70,8 @@ export default function HomeScreen(props) {
           />
         </TouchableOpacity>
       </View>
+
+      <View style={styles.historyContainer}></View>
     </View>
   );
 }
@@ -141,5 +143,11 @@ const styles = StyleSheet.create({
     color: colors.primary,
     flex: 1,
     marginHorizontal: 20,
+  },
+
+  historyContainer: {
+    backgroundColor: colors.greyBackground,
+    flex: 1,
+    padding: 10,
   },
 });
